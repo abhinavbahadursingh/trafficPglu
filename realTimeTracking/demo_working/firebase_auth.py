@@ -5,7 +5,7 @@ from firebase_admin import credentials, db
 
 def initialize_firebase():
     """Initialize Firebase and return a database reference"""
-    cred = credentials.Certificate(r"E:\codify_hackarena\traffic-monitoring-f490d-myfirebase-adminsdk-fbsvc-bcad7b3d89.json")  # Update with your correct path
+    cred = credentials.Certificate(r"E:\codify_hackarena\traffic-monitoring-f490d-firebase-adminsdk-fbsvc-29d3ed2ce7.json")  # Update with your correct path
     if not firebase_admin._apps:  # Prevents re-initialization error
         firebase_admin.initialize_app(cred, {
             'databaseURL': 'https://traffic-monitoring-f490d-default-rtdb.firebaseio.com/'  # Replace with your Firebase URL

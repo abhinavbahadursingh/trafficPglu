@@ -84,7 +84,9 @@ class VehicleCrash:
                     # Save the image inside the label box
                     # self.detections_update_label.configure(text="Vehicle Crash has been Detected")
                     print("Vehicle_Crash_Detected")
-                    perform_label_detected_func = threading.Thread(target=self.perform_label_detected)
+                    cx = (xmin + xmax) // 2
+                    cy = (ymin + ymax) // 2
+                    perform_label_detected_func = threading.Thread(target=self.perform_label_detected, args=(cx, cy, self.i))
                     perform_label_detected_func.start()
                     self.i += 1
                     self.count = 0
@@ -100,14 +102,15 @@ class VehicleCrash:
 
     # perform_label_detected() function performs certain activities including
     # functioning of alert systems when vehicle crash is detected
-    def perform_label_detected(self):
+    def perform_label_detected(self, cx, cy, track_id_num):
         self.detections_update_label.configure(text="Vehicle Crash has been Detected")
         # em = email_alert.Email(self.source)
         # em.run_mail()
         self.detections_update_label.configure(
             text="send to database")
         time.sleep(0.5)
-        crash_to_firebase.crash_to_fire(23,12,19)
+        track_id = f"Crash-{track_id_num}"
+        crash_to_firebase.crash_to_fire(cx,cy,track_id)
         time.sleep(0.5)
         self.detections_update_label.configure(text="")
 

@@ -7,7 +7,10 @@ from firebase_admin import credentials, db
 
 def initialize_firebase():
     """Initialize Firebase and return a database reference"""
-    cred = credentials.Certificate(r"E:\codify_hackarena\traffic-monitoring-f490d-firebase-adminsdk-fbsvc-bcad7b3d89.json")  # Update with your correct path
+    # IMPORTANT: Replace with the actual path to your Firebase service account key file.
+    # Download the key from your Firebase project settings.
+    # It's recommended to use environment variables to store the path securely.
+    cred = credentials.Certificate(r"E:\codify_hackarena\traffic-monitoring-f490d-firebase-adminsdk-fbsvc-29d3ed2ce7.json")  # Update with your correct path
     if not firebase_admin._apps:  # Prevents re-initialization error
         firebase_admin.initialize_app(cred, {
             'databaseURL': 'https://traffic-monitoring-f490d-default-rtdb.firebaseio.com/'  # Replace with your Firebase URL
@@ -64,4 +67,3 @@ def crash_to_fire(  cx,cy,track_id):
 
 
 
-crash_to_fire(205 , 75 , 7)
