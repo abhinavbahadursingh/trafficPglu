@@ -142,8 +142,6 @@ Detection** model.
 - Automatic Firebase alert with GPS location and timestamp
 - Email/SMS alert templates for emergency services (Hospital, Police, RTO)
 
-> **Note:** This sub-project was originally developed by [ashin-coder](https://github.com/ashin-coder)
-> et al. and has been extended here with Firebase integration (`myfirebase/`).
 
 ---
 
