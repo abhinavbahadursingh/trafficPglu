@@ -261,8 +261,7 @@ python vehicle-crash-detector/main.py
 **Abhinav Bahadur Singh**  
 GitHub: [abhinavbahadursingh](https://github.com/abhinavbahadursingh)
 
-The `vehicle-crash-detector` sub-project acknowledges contributions from
-[ashin-coder](https://github.com/ashin-coder), [stig777m](https://github.com/stig777m), and Meena Thamban.
+
 
 ---
 
